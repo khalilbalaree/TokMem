@@ -1,5 +1,9 @@
 # TokMem: Tokenized Procedural Memory for LLMs (Anonymous Release)
 
+![GitHub issues](https://img.shields.io/github/issues/khalilbalaree/TokMem)
+![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Last commit](https://img.shields.io/github/last-commit/khalilbalaree/TokMem)
+
 This repository implements **TokMem**, a method that enables large language models to acquire and recall procedural knowledges. The approach freezes the base LM while training only memory token embeddings.
 
 ## Three Experimental Tracks
@@ -23,6 +27,8 @@ Prompt-tuning style memorization experiments on structured data (GSM8K, text chu
 - **Quick start**: `cd memorization && bash run_memorization_comparison.sh`
 
 The code targets Hugging Face Transformers models (e.g., Llama and Qwen) and PyTorch.
+
+See `CONTRIBUTING.md` if you’d like to propose changes or file issues.
 
 ## Key Features
 
