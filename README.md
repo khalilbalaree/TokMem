@@ -1,8 +1,4 @@
-# TokMem: Tokenized Procedural Memory for LLMs (Anonymous Release)
-
-![GitHub issues](https://img.shields.io/github/issues/khalilbalaree/TokMem)
-![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-![Last commit](https://img.shields.io/github/last-commit/khalilbalaree/TokMem)
+# TokMem: Tokenized Procedural Memory for LLMs
 
 This repository implements **TokMem**, a method that enables large language models to acquire and recall procedural knowledges. The approach freezes the base LM while training only memory token embeddings.
 
