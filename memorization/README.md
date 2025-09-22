@@ -62,7 +62,7 @@ bash run_training_samples_test.sh
 
 **Key parameters (configurable in script):**
 - `TRAINING_SAMPLES`: Array of training sizes to test
-- `PROMPT_POSITION`: Embedding position ("infix", "prefix", "suffix")
+- `PROMPT_POSITION`: Embedding position ("infix", "prefix")
 - `MODEL_NAME`: Base model (default: Llama-3.2-3B-Instruct)
 - `EPOCHS`: Training epochs per run
 - `BATCH_SIZE`: Training batch size
