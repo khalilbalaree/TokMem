@@ -5,7 +5,7 @@ Atomic task calling using reserved special tokens as task identifiers. The model
 ## Contents
 
 - `task_model.py` — TaskCallingModel using reserved special tokens for tasks.
-- `task_dataset.py` — dataset and collation utilities for task calling.
+- `task_dataset.py` — dataset and collation utilities for task calling of the SNI dataset.
 - `task_training.py` — training loop helpers and logging.
 - `natural_instructions_eval.py` — evaluation on Natural Instructions‑style data.
 - `analyze_task_similarity.py` — utilities to analyze learned task token geometry.
@@ -15,6 +15,8 @@ Atomic task calling using reserved special tokens as task identifiers. The model
 
 ## Setup
 
+First, download the SNI dataset from the [Natural Instructions dataset](https://github.com/allenai/natural-instructions) and place it in the `atomic` directory.
+
 ```bash
 pip install -r ../requirements.txt
 # Optional extras used in some scripts
@@ -23,7 +25,7 @@ pip install peft
 
 ## Usage
 
-- Replicate baselines quickly by running the provided scripts:
+- Replicate baselines by running the provided scripts:
   - LoRA + replay memory baselines:
     ```bash
     bash test_lora_baseline.sh
@@ -35,6 +37,8 @@ pip install peft
   - Tip: adjust `CUDA_VISIBLE_DEVICES` and any paths inside the scripts as needed for your setup.
 
 - Key arguments used by these scripts:
+
+  **Common arguments (both scripts):**
   - `--num_tasks`: number of tasks to sample/train.
   - `--train_size`, `--val_size`, `--test_size`: dataset sizes per task.
   - `--model_name`: Hugging Face model identifier to load.
@@ -43,9 +47,10 @@ pip install peft
   - `--gradient_accumulation_steps`: steps to accumulate before an optimizer update.
   - `--max_length`: maximum sequence length fed to the model.
   - `--max_instruction_tokens`: maximum tokens for the instruction segment.
-  - `--eval_batch_size`: batch size used during evaluation.
   - `--validate_every_n_steps`: frequency (in optimizer steps) to run validation.
-  - `--lr`: learning rate (LoRA baseline script).
+
+  **LoRA baseline specific arguments:**
+  - `--lr`: learning rate.
   - `--lora_r`, `--lora_alpha`, `--lora_dropout`: LoRA hyperparameters.
   - `--target_modules`: which attention/projection modules to adapt with LoRA.
   - `--save_path`: path to save checkpoints/outputs.
